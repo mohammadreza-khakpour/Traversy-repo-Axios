@@ -15,14 +15,11 @@ function getTodos() {
 
 // POST REQUEST
 function addTodo() {
-  axios({
-    method: `post`,
-    url: `http://jsonplaceholder.typicode.com/todos`,
-    data: {
-      title: `new to-do`,
+  axios
+    .post(`http://jsonplaceholder.typicode.com/todos`, {
+      title: `a new to-do`,
       completed: false,
-    },
-  })
+    })
     .then((res) => showOutput(res))
     .catch((err) => console.error(err));
 }
